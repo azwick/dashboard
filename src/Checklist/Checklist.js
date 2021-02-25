@@ -1,22 +1,16 @@
 import './Checklist.css';
 
-import React, {useEffect, useState} from 'react';
-
 import Item from './Item';
+import {useState} from 'react';
 
-// import data from "./testData.json";
+// const testData = [
+//   { "id": "1", "content": "Give dog a bath", "complete": false }, 
+//   { "id": "2", "content": "Do laundry", "complete": true }
+// ];
 
 const Checklist = ({title, maxCount}) => {
-  // const [toDos, setToDos] = useState(data);
   const [toDos, setToDos] = useState([]);
   const [count, setCount] = useState(toDos.length);
-
-  useEffect(() => {
-    let counter = setCount(toDos.length);
-    return function cleanup() {
-      clearInterval(counter);
-    };
-  }, []);
 
   const handleToggle = (e) => {
       e.preventDefault()
@@ -40,8 +34,6 @@ const Checklist = ({title, maxCount}) => {
     const copyItem = [...toDos, { id: keyId, content: null, complete: false }];
     setToDos(copyItem);
     setCount(count + 1);
-    // e.currentTarget.focus();
-    console.log(e);
   }
 
   const updateItem = (userContent, e) => {
