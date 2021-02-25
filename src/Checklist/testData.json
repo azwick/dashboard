@@ -1,0 +1,9 @@
+[{
+    "id": "1",
+    "content": "Give dog a bath",
+    "complete": false
+  }, {
+    "id": "2",
+    "content": "Do laundry",
+    "complete": true
+  }]

@@ -1,0 +1,119 @@
+.checklist {
+  padding: 30px 0;
+}
+
+.checklist:not(:last-child) {
+  border-bottom: 1px solid var(--sage);
+}
+
+@media (min-width: 640px) {
+  .checklist {
+    padding: 0;
+    border-bottom-color: transparent !important;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.counter {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 20px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background-color: var(--sage);
+  color: var(--lightSage);
+  border-radius: 3px;
+  min-height: 40px;
+  align-items: center;
+  margin: 10px 0;
+  min-width: 200px;
+}
+
+form {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--lightSage);
+  font-size: 16px;
+  padding: 0;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--lightSage);
+}
+
+input::placeholder {
+  color: var(--darkSage);
+}
+
+.item div {
+  cursor: pointer;
+  min-width: 50%;
+}
+
+.done {
+  text-decoration: line-through;
+  color: var(--darkSage);
+}
+
+.delete {
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 10px;
+  width: 20px;
+  text-align: center;
+  color: var(--darkSage);
+  transition: color 0.2s;
+  font-size: 20px;
+}
+
+.delete:hover {
+  color: var( --lightSage);
+}
+
+button {
+  height: 25px;
+  width: 25px;
+  border: 0;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--lightSage);
+  background-color: var(--darkSage);
+  transition: background-color 0.2s;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var( --sage);
+}
+
+.emptyState {
+  border-radius: 3px;
+  border: 1px dotted var(--sage);
+  margin: 15px 0;
+  padding: 8px 10px;
+  color: var(--sage);
+  text-align: center;
+  font-weight: 300;
+}
