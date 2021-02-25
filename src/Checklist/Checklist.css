@@ -111,8 +111,8 @@ button:hover {
 .emptyState {
   border-radius: 3px;
   border: 1px dotted var(--sage);
-  margin: 15px 0;
-  padding: 8px 10px;
+  margin: 15px 0 20px;
+  padding: 10px;
   color: var(--sage);
   text-align: center;
   font-weight: 300;
