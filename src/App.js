@@ -1,12 +1,14 @@
-import './index.css';
+import './App.css';
 
 import Checklist from './Checklist/Checklist';
 import Clock from './Clock';
+import GitHub from './GitHub';
 import React from 'react';
 
 const App = () => {
   return (
     <div className="App">
+      <GitHub href='https://github.com/azwick/dashboard' />
       <div className="container">
         <Clock/>
         <div className="grid">

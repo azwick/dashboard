@@ -98,14 +98,14 @@ button {
   cursor: pointer;
   font-size: 20px;
   color: var(--lightSage);
-  background-color: var(--darkSage);
+  background-color: var(--sage);
   transition: background-color 0.2s;
   border-radius: 3px;
   font-weight: bold;
 }
 
 button:hover {
-  background-color: var( --sage);
+  background-color: var( --darkSage);
 }
 
 .emptyState {

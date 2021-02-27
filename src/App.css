@@ -4,7 +4,7 @@
 
 :root {
   --lightSage: #e0ead3;
-  --sage: #94a47b;
+  --sage: #a0b086;
   --darkSage: #77815C;
 }
 
@@ -22,6 +22,10 @@ body {
 
 body.darkMode {
   background-color: black;
+}
+
+a {
+  text-decoration: none;
 }
 
 .App {
@@ -46,25 +50,30 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 50px;
+  padding: 30px;
   width: 100%;
   max-width: 960px;
+  min-height: 505px;
+}
+@media (min-width: 640px) {
+  .container {
+    padding: 0 50px;
+  }
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  margin-top: 80px;
+  margin-top: 50px;
   width: 100%;
 }
-
 @media (min-width: 640px) {
   .grid {
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
+    margin-top: 80px;
   }
 }
-
 @media (min-width: 960px) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
@@ -72,13 +81,54 @@ h2 {
 }
 
 .clock {
-  font-size: 150px;
+  font-size: 100px;
   font-weight: 100;
   text-align: center;
   color: var(--sage);
 }
+@media (min-width: 640px) {
+  .clock {
+    font-size: 150px;
+  }
+}
 
 .date {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 100;
+}
+@media (min-width: 640px) {
+  .date {
+    font-size: 36px;
+  }
+}
+
+.gitHub {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  color: var(--lightSage);
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background-color: var(--sage);
+  transition: background-color 0.2s;
+}
+@media (min-width: 640px) {
+  .gitHub {
+    position: absolute;
+    top: 0;
+  }
+}
+
+.gitHub:hover {
+  background-color: var(--darkSage);
+}
+
+.gitHub svg {
+  fill: var(--lightSage);
+  margin-right: 10px;
+  width: 22px;
+  height: 22px;
 }
