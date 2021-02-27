@@ -2,8 +2,11 @@
   padding: 30px 0;
 }
 
-.checklist:not(:last-child) {
+.light .checklist:not(:last-child) {
   border-bottom: 1px solid var(--sage);
+}
+.dark .checklist:not(:last-child) {
+  border-bottom: 1px solid var(--camel);
 }
 
 @media (min-width: 640px) {
@@ -35,13 +38,19 @@
   display: flex;
   justify-content: space-between;
   padding: 8px 10px;
-  background-color: var(--sage);
-  color: var(--lightSage);
   border-radius: 3px;
   min-height: 40px;
   align-items: center;
   margin: 10px 0;
   min-width: 200px;
+}
+.light .item {
+  background-color: var(--sage);
+  color: var(--lightSage);
+}
+.dark .item {
+  background-color: var(--camel);
+  color: var(--lightCamel);
 }
 
 form {
@@ -52,18 +61,30 @@ input {
   width: 100%;
   border: 0;
   background: transparent;
-  color: var(--lightSage);
   font-size: 16px;
   padding: 0;
 }
+.light input {
+  color: var(--lightSage);
+}
+.dark input {
+  color: var(--lightCamel);
+}
 
-input:focus {
+.light input:focus {
   outline: none;
   border-bottom: 1px solid var(--lightSage);
 }
+.dark input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--lightCamel);
+}
 
-input::placeholder {
+.light input::placeholder {
   color: var(--darkSage);
+}
+.dark input::placeholder {
+  color: var(--darkCamel);
 }
 
 .item div {
@@ -71,9 +92,13 @@ input::placeholder {
   min-width: 50%;
 }
 
-.done {
+.light .done {
   text-decoration: line-through;
   color: var(--darkSage);
+}
+.dark .done {
+  text-decoration: line-through;
+  color: var(--darkCamel);
 }
 
 .delete {
@@ -82,13 +107,14 @@ input::placeholder {
   margin-left: 10px;
   width: 20px;
   text-align: center;
-  color: var(--darkSage);
   transition: color 0.2s;
   font-size: 20px;
 }
-
-.delete:hover {
-  color: var( --lightSage);
+.light .delete {
+  color: var(--darkSage);
+}
+.dark .delete {
+  color: var(--darkCamel);
 }
 
 button {
@@ -97,23 +123,33 @@ button {
   border: 0;
   cursor: pointer;
   font-size: 20px;
-  color: var(--lightSage);
-  background-color: var(--sage);
   transition: background-color 0.2s;
   border-radius: 3px;
   font-weight: bold;
 }
-
-button:hover {
-  background-color: var( --darkSage);
+.light button {
+  color: var(--lightSage);
+  background-color: var(--sage);
+}
+.dark button {
+  color: var(--lightCamel);
+  background-color: var(--camel);
 }
 
 .emptyState {
   border-radius: 3px;
-  border: 1px dotted var(--sage);
+  border: 1px dotted transparent;
   margin: 15px 0 20px;
   padding: 10px;
-  color: var(--sage);
   text-align: center;
   font-weight: 300;
+}
+
+.light .emptyState {
+  color: var(--sage);
+  border-color: var(--sage);
+}
+.dark .emptyState {
+  color: var(--camel);
+  border-color: var(--camel);
 }

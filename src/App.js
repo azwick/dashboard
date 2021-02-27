@@ -1,14 +1,20 @@
 import './App.css';
 
+import React, { useState } from 'react';
+
 import Checklist from './Checklist/Checklist';
 import Clock from './Clock';
 import GitHub from './GitHub';
-import React from 'react';
+import ThemeSwitch from './ThemeSwitch';
 
 const App = () => {
+  const getTheme = localStorage.getItem("theme");
+  const [theme, setTheme] = useState(!getTheme ? 'light' : getTheme);
+
   return (
-    <div className="App">
+    <div className={'App ' + theme}>
       <GitHub href='https://github.com/azwick/dashboard' />
+      <ThemeSwitch setTheme={setTheme} />
       <div className="container">
         <Clock/>
         <div className="grid">

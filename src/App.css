@@ -3,9 +3,15 @@
 }
 
 :root {
+  /* light */
   --lightSage: #e0ead3;
   --sage: #a0b086;
   --darkSage: #77815C;
+
+  /* dark */
+  --darkCamel: #24211f;
+  --camel: #b88f4a;
+  --lightCamel: #f0dcbb;
 }
 
 body {
@@ -16,12 +22,6 @@ body {
    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--lightSage);
-  color: var(--darkSage);
-}
-
-body.darkMode {
-  background-color: black;
 }
 
 a {
@@ -34,6 +34,14 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.App.light {
+  background-color: var(--lightSage);
+  color: var(--darkSage);
+}
+.App.dark {
+  background-color: var(--darkCamel);
+  color: var(--lightCamel);
 }
 
 h1 {
@@ -50,7 +58,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
+  padding: 80px 30px;
   width: 100%;
   max-width: 960px;
   min-height: 505px;
@@ -84,7 +92,12 @@ h2 {
   font-size: 100px;
   font-weight: 100;
   text-align: center;
+}
+.light .clock {
   color: var(--sage);
+}
+.dark .clock {
+  color: var(--camel);
 }
 @media (min-width: 640px) {
   .clock {
@@ -109,26 +122,93 @@ h2 {
   font-size: 12px;
   font-weight: 600;
   padding: 8px 16px;
-  color: var(--lightSage);
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
-  background-color: var(--sage);
   transition: background-color 0.2s;
+  position: absolute;
+  top: 0;
+  left: 30px;
 }
 @media (min-width: 640px) {
   .gitHub {
-    position: absolute;
-    top: 0;
+    left: 0;
   }
 }
-
-.gitHub:hover {
-  background-color: var(--darkSage);
+.light .gitHub {
+  background-color: var(--sage);
+  color: var(--lightSage);
+}
+.dark .gitHub {
+  background-color: var(--camel);
+  color: var(--lightCamel);
 }
 
 .gitHub svg {
-  fill: var(--lightSage);
   margin-right: 10px;
   width: 22px;
   height: 22px;
+}
+.light .gitHub svg {
+  fill: var(--lightSage);
+}
+.dark .gitHub {
+  fill: var(--lightCamel);
+}
+
+.themeSwitch {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  transition: background-color 0.2s;
+  position: absolute;
+  top: 0;
+  right: 30px;
+}
+@media (min-width: 640px) {
+  .themeSwitch {
+    right: 0;
+  }
+}
+.light .themeSwitch {
+  background-color: var(--sage);
+  color: var(--lightSage);
+}
+.dark .themeSwitch {
+  background-color: var(--camel);
+  color: var(--lightCamel);
+}
+
+.toggle {
+  height: 20px;
+  width: 40px;
+  border-radius: 20px;
+  margin: 0 10px;
+  border: 1px solid transparent;
+}
+.light .toggle {
+  border-color: 1px solid var(--lightSage);
+}
+.dark .toggle {
+  border: 1px solid var(--lightCamel);
+}
+
+.toggle .O {
+  margin: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.light .toggle .O {
+  background-color: var(--lightSage);
+}
+.dark .toggle .O {
+  margin-left: 22px;
+  background-color: var(--lightCamel);
 }

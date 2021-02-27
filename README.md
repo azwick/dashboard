@@ -4,16 +4,15 @@
 - [x] Disable test data
 - [x] Create empty state
 - [x] Create a seperate repository for the dashboard dummy
-- [ ] Check code again / split code into smaller components if necessary
+- [x] Deploy on Vercel
+- [x] Update img & links on my website
+- [ ] Rewrite code into TypeScript
 - [ ] Send code to review
 - [ ] Do review annotations
-- [ ] Deploy on Vercel
-- [ ] Update img & links on my website
-- [ ] Partyyy hard
 
 #### Further ideas
 - [ ] Dark mode implementation
-- [ ] Implement database (mongo db?)
+- [ ] Implement database or save data at localStorage
 
 #### Run project
 ```
